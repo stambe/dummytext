@@ -1,7 +1,7 @@
 <?PHP
-print_r($_REQUEST);
+print $request_body = file_get_contents('php://input');
 $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
 $txt = "John Doe\n";
-fwrite($myfile, json_encode($_REQUEST));
+fwrite($myfile, $request_body);
 fclose($myfile);
 ?>
